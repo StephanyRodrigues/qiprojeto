@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden; /* Evita a rolagem da página toda */
+    background-color: black; /* Cor de fundo preto escuro */
+    color: #ffffff; /* Cor da fonte branca */
+      
+}
+  
+    
+  /* Container principal que organiza o layout do conteúdo */
+  .container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+/*----------------------------------------------sidebaresquerda-------------------------------------------*/
+  
+  /* Sidebar fixa à esquerda e à direita */
+  .sidebar {
+    width: 400px;
+    background-color:black;
+    padding: 10px;
+  }
+  .menu-lateral-esquerda {
+    width: 350px;
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.perfil-sidebar {
+    text-align: center;
+}
+
+.foto-perfil-sidebar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.foto-perfil-sidebar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nome-perfil-sidebar p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+}
+
+.avaliacao-sidebar span {
+    font-size: 14px;
+    background-color: #4a0070;
+    padding-right: 5px;
+    border-radius: 5px;
+    
+}
+
+.menu-opcoes-esquerda {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-opcoes-esquerda button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4a0070; /* Dark Violet */
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu-opcoes-esquerda button:hover {
+    background-color: #230035; /* Altere a cor de fundo ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o tamanho do botão */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);/* Adiciona uma sombra */
+}
+
+/*----------------------------------------------sidebardireita-------------------------------------------*/
+  
+.sidebar-direita {
+    width: 35%;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-central {
+    margin-bottom: 20px;
+    background-color: black;
+}
+
+.logo-imagem {
+    width: 200px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.sobre-nos-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.barra-pesquisa {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 500px;
+}
+
+.barra-pesquisa input {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 16px;
+    margin-left: 50px;
+}
+
+.barra-pesquisa .btn-pesquisa {
+    background-color: #4a0070;
+    border: none;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.barra-pesquisa .btn-pesquisa img {
+    width: 20px;
+    height: 20px;
+}
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+.categoria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-circular {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: #4a0070;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.btn-circular img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain; /* Ajusta para que a imagem fique proporcional */
+    border-radius: 50%; /* Garante bordas arredondadas */
+}
+
+
+    .btn-circular:hover {
+        background-color: #230035; /* Altere a cor de fundo ao passar o mouse */
+        transform: scale(1.1); /* Aumenta o tamanho do botão */
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+      }
+
+
+.categoria p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/*----------------------------------------------feed-------------------------------------------*/
+  /* Área do feed rolável no centro */
+  .feed {
+    flex: 1;
+    overflow-y: auto; /* Rolagem apenas para o feed */
+    padding: 20px;
+    background-color: black;
+    scrollbar-width: none;
+  }
+  
+.postagem {
+    width: 300px;
+    border: 1px solid #fff;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #4a0070;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+}
+
+.foto-perfil {
+    width: 30px;
+    height: 30px;
+    border-radius: 30%;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.nome-perfil {
+    font-weight: bold;
+    color: white;
+}
+
+.categoria {
+    color: gray;
+    font-size: 12px;
+}
+
+.avaliacao {
+    font-weight: bold;
+    color: #ffbf00; /* Cor de estrela dourada */
+}
+
+.carrossel {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.imagens {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.imagens img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.indicadores {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.indicador {
+    width: 8px;
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicador.ativo {
+    background-color: #333;
+}
+
+.descricao {
+    font-size: 14px;
+    color: white;
+    background-color: #222;
+    border:1px solid #fff;
+}
+/*-------------------------------------portfolio--------------------------------------------*/
+.conteudo {
+    
+    padding: 20px;
+  }
+  
+  .portfolio {
+    background-color: #4a0070;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .portfolio h2 {
+    color: white;
+  }
+  
+  .galeria-imagens {
+    margin-top: 20px;
+  }
+  
+  .galeria-imagens p {
+    color: #777;
+    font-style: italic;
+  }
+  
+  .botao-adicionar-imagem {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4a0070;
+    color: #fff;
+    font-weight: bold;
+    border:1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .botao-adicionar-imagem:hover {
+    background-color: #230035;
+  }
+  
+  .tags {
+    margin-top: 20px;
+  }
+  
+  .opcoes-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+     
+  }
+  
+  .opcoes-tags label {
+    width: 48%; 
+    margin-bottom: 10px; 
+    color: #eee
+  }
+  
+  .descricao-portfolio {
+    margin-top: 20px;
+  }
+  
+  #texto-portfolio {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    resize: vertical;
+    background-color: #222; /* Fundo cinza escuro para a caixa de texto */
+    color: #eee; /* Cor cinza claro para o texto */
+     border: 1px solid #555; /* Borda cinza mais clara */
+  }
+  
+  #botao-salvar-portfolio {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4a0070;
+    color: #fff;
+    font-weight: bold;
+    border:1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #botao-salvar-portfolio:hover {
+    background-color: #230035;
+  }
